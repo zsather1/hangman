@@ -27,7 +27,7 @@ public class Words {
 		try {
 			String line = br.readLine();
 			while (line != null){
-				System.out.println(line);
+				//System.out.println(line);
 				words.add(line);
 				line = br.readLine();
 			}
@@ -35,8 +35,8 @@ public class Words {
 			e.printStackTrace();
 		}
 		br.close();
-		System.out.println("HERE");
-		System.out.println(words);
+		//System.out.println("HERE");
+		//System.out.println(words);
 		WORDS = words;
 	}
 	

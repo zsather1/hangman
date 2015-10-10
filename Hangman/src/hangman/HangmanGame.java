@@ -64,7 +64,7 @@ public class HangmanGame {
 	
 	public static void main(String[] args) throws IOException{
 		Words.parseFile("src/words.txt");
-		System.out.println(Words.getWords());
+		//System.out.println(Words.getWords());
 	}
 	
 }
