@@ -47,6 +47,12 @@ public class HangmanGame {
 		return "";
 	}
 	
+	/**
+	 * Plays a game of hangman. For rules refer to wikipedia
+	 * 		https://en.wikipedia.org/wiki/Hangman_(game)
+	 * 		User is allowed 6 guesses. 2 guesses are taken off 
+	 * 		for incorrectly guessing vowels, no opportunity
+	 */
 	public void playHangman(){
 		
 	}
