@@ -6,7 +6,6 @@ import java.util.List;
 public class HangmanGame {
 	
 	private List<String> wordList;
-	private String secretWord;
 	
 	public HangmanGame() throws IOException{
 		Words.parseFile("src/words.txt");
