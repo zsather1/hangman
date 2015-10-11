@@ -2,15 +2,24 @@ package hangman;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
+
 
 public class HangmanGameSol {
 	
 	private List<String> wordList;
+	private String alphabet = "abcdefghijklmnopqrstuvwxyz"; 
 	
 	public HangmanGameSol() throws IOException{
 		Words.parseFile("src/words.txt");
 		wordList = Words.getWords();
 		
+	}
+	
+	private String getRandomWord(){
+		Random r = new Random();
+		int rInt = r.nextInt(wordList.size());
+		return wordList.get(rInt);
 	}
 	
 	/**
@@ -22,10 +31,8 @@ public class HangmanGameSol {
 	 */
 	public boolean isWordGuessed(String word, List<String> guessedLetters){
 		for (int i = 0; i < word.length(); ++i){
-			String tmp = "";
-			char letter = word.charAt(i);
-			tmp+=letter;
-			if (! guessedLetters.contains(tmp)){
+			String letter = "" + word.charAt(i);
+			if (! guessedLetters.contains(letter)){
 				return false;
 			}
 		}
@@ -43,7 +50,7 @@ public class HangmanGameSol {
 	public String getGuessedWord(String word, List<String> guessedLetters){
 		String displayWord = "";
 		for (int i = 0; i < word.length(); ++i){
-			char letter = word.charAt(i);
+			String letter = "" + word.charAt(i);
 			if (guessedLetters.contains(letter)){
 				displayWord += letter;
 			}
@@ -61,7 +68,14 @@ public class HangmanGameSol {
 	 * @return string, letters not in guessedLetters
 	 */
 	public String getAvailableLetters(List<String> guessedLetters){
-		return "";
+		String aLetters = "";
+		for (int i = 0; i < alphabet.length(); ++i){
+			String letter = "" + alphabet.charAt(i);
+			if(! guessedLetters.contains(letter)){
+				aLetters+=letter;
+			}
+		}
+		return aLetters;
 	}
 	
 	/**
@@ -71,6 +85,8 @@ public class HangmanGameSol {
 	 * 		for incorrectly guessing vowels, no opportunity
 	 */
 	public void playHangman(){
+		//For debugging, comment this line out and set your own secret word
+		String secretWord = this.getRandomWord();
 		
 	}
 }

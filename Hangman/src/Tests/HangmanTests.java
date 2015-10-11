@@ -27,10 +27,48 @@ public class HangmanTests {
 		guessedLetters.add("a");
 		guessedLetters.add("b");
 		guessedLetters.add("t");
-		System.out.println(guessedLetters);
-		System.out.println(guessedLetters.contains("b"));
 		assertTrue(hg.isWordGuessed("bat", guessedLetters));
 		assertFalse(hg.isWordGuessed("batter", guessedLetters));
+	}
+	
+	@Test
+	public void testGetGuessedWord(){
+		HangmanGameSol hg = null;
+		try {
+			hg = new HangmanGameSol();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String word = "abc";
+		List<String> guessedLetters = new ArrayList<String>();
+		assertEquals(hg.getGuessedWord(word, guessedLetters),"***");
+		guessedLetters.add("a");
+		assertEquals(hg.getGuessedWord(word, guessedLetters),"a**");
+		guessedLetters.add("z");
+		assertEquals(hg.getGuessedWord(word, guessedLetters),"a**");
+		guessedLetters.add("b");
+		guessedLetters.add("c");
+		assertEquals(hg.getGuessedWord(word, guessedLetters),word);
+		
+	}
+	
+	@Test
+	public void testGetAvailableLetters(){
+		HangmanGameSol hg = null;
+		try {
+			hg = new HangmanGameSol();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		List<String> guessedLetters = new ArrayList<String>();
+		assertEquals(hg.getAvailableLetters(guessedLetters),"abcdefghijklmnopqrstuvwxyz");
+		guessedLetters.add("a");
+		assertEquals(hg.getAvailableLetters(guessedLetters),"bcdefghijklmnopqrstuvwxyz");
+		guessedLetters.add("c");
+		guessedLetters.add("z");
+		assertEquals(hg.getAvailableLetters(guessedLetters),"bdefghijklmnopqrstuvwxy");
 	}
 	
 }

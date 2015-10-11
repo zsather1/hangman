@@ -2,6 +2,7 @@ package hangman;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 
 public class HangmanGame {
 	
@@ -11,6 +12,16 @@ public class HangmanGame {
 		Words.parseFile("src/words.txt");
 		wordList = Words.getWords();
 		
+	}
+
+	/**
+	 * Helper function that returns a random word
+	 * @return String, random word
+	 */
+	private String getRandomWord(){
+		Random r = new Random();
+		int rInt = r.nextInt(wordList.size());
+		return wordList.get(rInt);
 	}
 	
 	/**
@@ -53,7 +64,8 @@ public class HangmanGame {
 	 * 		for incorrectly guessing vowels, no opportunity
 	 */
 	public void playHangman(){
-		
+		//For debugging, comment this line out and set your own secret word
+		String secretWord = this.getRandomWord();
 	}
 	
 	
