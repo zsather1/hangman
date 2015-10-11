@@ -1,6 +1,7 @@
 package hangman;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -74,7 +75,7 @@ public class HangmanGame {
 	 * Plays a game of hangman. For rules refer to wikipedia
 	 * 		https://en.wikipedia.org/wiki/Hangman_(game)
 	 * 		User is allowed 6 guesses. 2 guesses are taken off 
-	 * 		for incorrectly guessing vowels, no opportunity
+	 * 		for incorrectly guessing vowels
 	 */
 	public void playHangman(){
 		//For debugging, comment this line out and set your own secret word
@@ -84,6 +85,47 @@ public class HangmanGame {
 		
 	}
 	
+	/**
+	 * Function that says if two words would match, even if one
+	 * 		of the words is missing letters as denoted by asterisks
+	 * @param myWord - String, word with asterisks in the place 
+	 * 		of missing letters
+	 * @param otherWord - String, complete word
+	 * @return - boolean, if the words could match
+	 */
+	public boolean matchWithGaps(String myWord, String otherWord){
+		
+		//Put your code here
+				
+		return false; //Remove this line
+	}
+	
+	/**
+	 * Function that returns a list of words that could
+	 * 		match the inputed word 
+	 * @param word - String, word that can have gaps in it in the
+	 * 		form of asterisks
+	 * @return List of complete words that could match the given word
+	 */
+	public List<String> getPossibleMatches(String word){
+		return new ArrayList<String>();
+	}
+	
+	/**
+	 * Plays a game of hangman. For rules refer to wikipedia
+	 * 		https://en.wikipedia.org/wiki/Hangman_(game)
+	 * 		User is allowed 6 guesses. 2 guesses are taken off 
+	 * 		for incorrectly guessing vowels, in this version, the
+	 * 		user can type an asterisk ("*") to see possible words 
+	 * 		that the secret word could be given the letters the user
+	 * 		has guessed
+	 */
+	public void playHangmanWithHints(){
+		//For debugging, comment this line out and set your own secret word
+		String secretWord = this.getRandomWord();
+		
+		//Put your code here
+	}
 	
 	
 	
