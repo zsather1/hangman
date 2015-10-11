@@ -6,8 +6,12 @@ import java.util.Random;
 
 public class HangmanGame {
 	
+	//List of words loaded from words.txt
 	private List<String> wordList;
 	
+	/**
+	 * Constructor for HangmanGame
+	 */
 	public HangmanGame() throws IOException{
 		Words.parseFile("src/words.txt");
 		wordList = Words.getWords();
@@ -32,7 +36,10 @@ public class HangmanGame {
 	 * @return boolean, true if all the letters for the word are in guessedLetters
 	 */
 	public boolean isWordGuessed(String word, List<String> guessedLetters){
-		return false;
+		
+		//Put your code here
+		
+		return false; //Remove this
 	}
 	
 	/**
@@ -44,7 +51,10 @@ public class HangmanGame {
 	 * @return string that represents the word, with either letters or asterisks 
 	 */
 	public String getGuessedWord(String word, List<String> guessedLetters){
-		return "";
+		
+		//Put your code here
+		
+		return ""; //Remove this
 	}
 	
 	/**
@@ -54,7 +64,10 @@ public class HangmanGame {
 	 * @return string, letters not in guessedLetters
 	 */
 	public String getAvailableLetters(List<String> guessedLetters){
-		return "";
+		
+		//Put your code here
+		
+		return ""; //Remove this
 	}
 	
 	/**
@@ -66,6 +79,9 @@ public class HangmanGame {
 	public void playHangman(){
 		//For debugging, comment this line out and set your own secret word
 		String secretWord = this.getRandomWord();
+		
+		//Put your code here
+		
 	}
 	
 	
@@ -75,8 +91,8 @@ public class HangmanGame {
 	
 	
 	public static void main(String[] args) throws IOException{
-		Words.parseFile("src/words.txt");
-		//System.out.println(Words.getWords());
+		HangmanGame hg = new HangmanGame();
+		hg.playHangman();
 	}
 	
 }
