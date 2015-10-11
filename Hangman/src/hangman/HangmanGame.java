@@ -108,7 +108,10 @@ public class HangmanGame {
 	 * @return List of complete words that could match the given word
 	 */
 	public List<String> getPossibleMatches(String word){
-		return new ArrayList<String>();
+		
+		//Put your code here
+		
+		return new ArrayList<String>(); //Remove this line
 	}
 	
 	/**
@@ -127,11 +130,7 @@ public class HangmanGame {
 		//Put your code here
 	}
 	
-	
-	
-	
-	
-	
+
 	public static void main(String[] args) throws IOException{
 		HangmanGame hg = new HangmanGame();
 		hg.playHangman();
